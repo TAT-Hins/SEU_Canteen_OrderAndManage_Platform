@@ -4,15 +4,19 @@
     <string name="prompt_username">用户名</string>
     <string name="prompt_password">您的密码</string>
     <string name="prompt_password_autofill">您的密码</string>
-    <string name="action_sign_in">登录 / 注册</string>
+    <string name="action_sign_in">登录</string>
     <string name="action_sign_in_ime">登录</string>
     <string name="error_username_notexist">用户名不存在！</string>
     <string name="error_invalid_username">您输入的是不合法的用户名！</string>
-    <string name="error_invalid_password">您输入的密码太短！</string>
+    <string name="error_invalid_password">您输入的密码不符合格式！</string>
     <string name="error_incorrect_password">您输入的密码不正确</string>
     <string name="error_name_required">必须输入用户名！</string>
     <string name="error_password_required">必须输入密码！</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="server_host_url">http://localhost</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
