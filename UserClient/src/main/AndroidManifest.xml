@@ -8,7 +8,9 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".Override.Base.COMP_Application"
         android:allowBackup="true"
+        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -17,16 +19,26 @@
 
         <activity
             android:name=".activity.LoginActivity_Client"
-            android:label="@string/app_name">
+            android:label="@string/login_activity_name"
+            android:theme="@style/AppTheme.Login">
+        </activity>
+
+        <activity
+            android:name=".activity.RegisterActivity_client"
+            android:label="@string/register_activity_name"
+            android:theme="@style/AppTheme.Register" />
+
+        <activity
+            android:name=".activity.MainActivity_Client"
+            android:label="@string/main_activity_name"
+            android:theme="@style/AppTheme.Main">
             <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.MainActivity_Client">
-
-        </activity>
     </application>
 
 </manifest>

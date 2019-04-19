@@ -1,22 +1,65 @@
 <resources>
+    
     <string name="app_name">东南大学食堂点餐管理平台</string>
-    <!-- Strings related to login -->
-    <string name="prompt_username">用户名</string>
+    <string name="login_activity_name">登录</string>
+    <string name="register_activity_name">注册</string>
+    <string name="main_activity_name">主页</string>
+
+    <!-- 网络请求根地址 -->
+    <string name="server_host_url">http://10.0.2.2/UserClient</string>
+
+    <!-- 登录/注册界面 -->
+    <string name="prompt_account">一卡通号/昵称</string>
     <string name="prompt_password">您的密码</string>
-    <string name="prompt_password_autofill">您的密码</string>
     <string name="action_sign_in">登录</string>
     <string name="action_sign_in_ime">登录</string>
-    <string name="error_username_notexist">用户名不存在！</string>
-    <string name="error_invalid_username">您输入的是不合法的用户名！</string>
-    <string name="error_invalid_password">您输入的密码不符合格式！</string>
-    <string name="error_incorrect_password">您输入的密码不正确</string>
-    <string name="error_name_required">必须输入用户名！</string>
+    <!-- 非法登录帐号 -->
+    <string name="error_name_required">必须输入一卡通号或昵称！</string>
+    <string name="error_invalid_account">一卡通号或昵称不符合格式！</string>
+    <!-- 非法密码 -->
     <string name="error_password_required">必须输入密码！</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
-    <string name="server_host_url">http://localhost</string>
+    <string name="error_invalid_password">密码不符合格式！</string>
+    <!-- 登录失败 -->
+    <string name="error_incorrect">您输入的用户名或密码不正确</string>
+    <string name="error_user_notexist">该用户不存在！</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- 注册界面 -->
+    <string name="prompt_cardid">一卡通号（必填）</string>
+    <string name="prompt_nickname">您的昵称（选填）</string>
+    <string name="prompt_password_confirm">再次输入密码</string>
+    <string name="action_sign_up">注册</string>
+    <string name="action_sign_up_ime">注册</string>
+    <!-- 非法一卡通号 -->
+    <string name="error_cardid_required">必须输入一卡通号！</string>
+    <string name="error_invalid_cardid">一卡通号不符合格式！</string>
+    <!-- 非法昵称 -->
+    <string name="error_invalid_nickname">昵称不符合格式！</string>
+    <!-- 注册两次密码不相同 -->
+    <string name="error_different_password">两次输入的密码不一致</string>
+    <!-- 注册失败 -->
+    <string name="error_signup_failed">注册失败</string>
+
+    <!-- TEST -->
+    <string name="hello_fragment_home">这是主页面Fragment</string>
+    <string name="hello_fragment_dishes">这是菜单页面Fragment</string>
+    <string name="hello_fragment_mine">这是我的页面Fragment</string>
+
+    <!-- 主页面底部导航标题 -->
+    <string name="title_icon_home">主页</string>
+    <string name="title_icon_dishes">菜单</string>
+    <string name="title_icon_mine">我的</string>
+
+    <!-- 提示框内容 -->
+    <!-- 登录/注册界面 -->
+    <string name="toast_hint_signup_success">注册成功！</string>
+    <string name="toast_hint_login_success">登录成功！</string>
+    <!-- 主界面 -->
+    <string name="toast_hint_exit_success">退出成功！</string>
+    <string name="toast_hint_exit_warning">再按一次退出</string>
+
+    <!-- 个人信息页面 -->
+    <string name="text_booking_record_week">近一周预约</string>
+    <string name="text_booking_record_month">近一月预约</string>
+    <string name="text_booking_record_year">近一年预约</string>
+
 </resources>

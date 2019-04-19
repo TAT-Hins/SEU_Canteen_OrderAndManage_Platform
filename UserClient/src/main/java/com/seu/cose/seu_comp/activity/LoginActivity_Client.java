@@ -4,49 +4,32 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.app.LoaderManager.LoaderCallbacks;
 
-import android.content.CursorLoader;
-import android.content.Loader;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.AsyncTask;
-
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
-import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
-
+import com.seu.cose.seu_comp.Override.Base.BaseAppCompatActivity;
+import com.seu.cose.seu_comp.Override.Base.NetCommunication;
 import com.seu.cose.seu_comp.R;
-
-//import static android.Manifest.permission.READ_CONTACTS;
+import com.seu.cose.seu_comp.entity.Base.AccessResult;
+import com.seu.cose.seu_comp.entity.Base.User;
+import com.seu.cose.seu_comp.entity.Login.UserAccessResult;
 
 /**
  * 登录窗口，输入在系统中已有的帐号密码，通过验证后进入系统
  */
-public class LoginActivity_Client extends AppCompatActivity {
+public class LoginActivity_Client extends BaseAppCompatActivity {
 
     /**
      * 功能标注ID
@@ -54,14 +37,6 @@ public class LoginActivity_Client extends AppCompatActivity {
 //    private static final int REQUEST_READ_CONTACTS = 0;     //联系人读取权限
 
     private static final String TAG = "LoginActivity_Client";
-
-
-    /**
-     * 临时帐号密码
-     */
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "213150168:BallKing961006", "213162443:windy869"
-    };
 
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
@@ -78,11 +53,11 @@ public class LoginActivity_Client extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_client);
+        setContentView(R.layout.activity_login);
         // Set up the login form.
-        mUserNameView = (AutoCompleteTextView) findViewById(R.id.username);
+        mUserNameView = (AutoCompleteTextView) findViewById(R.id.login_username);
 
-        mPasswordView = (EditText) findViewById(R.id.password);
+        mPasswordView = (EditText) findViewById(R.id.login_password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
@@ -95,7 +70,7 @@ public class LoginActivity_Client extends AppCompatActivity {
             }
         });
 
-        Button mSignInButton = (Button) findViewById(R.id.email_sign_in_button);
+        Button mSignInButton = (Button) findViewById(R.id.login_sign_in_button);
         mSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -103,7 +78,26 @@ public class LoginActivity_Client extends AppCompatActivity {
             }
         });
 
-        mLoginFormView = findViewById(R.id.login_form);
+        Button mSignUpButton = (Button) findViewById(R.id.login_sign_up_button);
+        mSignUpButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 跳转到注册窗口
+                Intent intent;
+//                boolean isRegActivityExist = false;
+//                for (Activity act: app.activities){
+//                    if (act.getClass().equals(RegisterActivity_client.class)){
+//                        intent
+//                        isRegActivityExist = true;
+//                    }
+//                }
+//                if (!isRegActivityExist)
+                    intent = new Intent(LoginActivity_Client.this, RegisterActivity_client.class);
+                startActivity(intent);
+            }
+        });
+
+        mLoginFormView = findViewById(R.id.login_input_form);
         mProgressView = findViewById(R.id.login_progress);
     }
 
@@ -142,7 +136,7 @@ public class LoginActivity_Client extends AppCompatActivity {
             focusView = mUserNameView;
             cancel = true;
         } else if (!isUserNameValid(userName)) {
-            mUserNameView.setError(getString(R.string.error_invalid_username));
+            mUserNameView.setError(getString(R.string.error_invalid_nickname));
             focusView = mUserNameView;
             cancel = true;
         }
@@ -217,53 +211,22 @@ public class LoginActivity_Client extends AppCompatActivity {
         protected Boolean doInBackground(Void... params) {
             // TODO: attempt authentication against a network service.
 
-            // 向服务器请求通信
-            try {
-                Thread.sleep(2000);
-
-//                //使用OkHttp框架进行网络通信
+//            Map<String, String> param = new HashMap<String, String>();
+//            param.put("username", mUsername);
+//            param.put("password", mPassword);
 //
-//                //创建OkHttpClient对象
-//                OkHttpClient okHttpClient = new OkHttpClient();
-//                //添加Post请求体内容
-//                RequestBody requestBody = new FormBody.Builder()
-//                        .add("username", mUsername)
-//                        .add("password", mPassword)
-//                        .build();
-//                //创建请求对象，添加请求地址和post参数
-//                Request request = new Request.Builder()
-//                        .url("http://127.0.0.1/login")
-//                        .post(requestBody)
-//                        .build();
-//
-//                //创建调用对象，重写回调函数
-//                Response response = okHttpClient.newCall(request).execute();
-//                if (response != null){
-//                    // success
-//                    Log.i(TAG, response.message());
-//                    response.body().close();
-//                    return true;
-//                }
+//            UserAccessResult result = NetCommunication.post(param, getString(R.string.server_host_url) + "/login");
 
-                // Simulations
-                for (String credential : DUMMY_CREDENTIALS) {
-                    String[] pieces = credential.split(":");
-                    if (pieces[0].equals(mUsername)) {
-                        // Account exists, return true if the password matches.
-                        return pieces[1].equals(mPassword);
-                    }
-                }
+            User u = new User();
+            u.setCardid(mUsername);
+            u.setPassword(mPassword);
 
-            } catch (InterruptedException e) {
-                return false;
-//            } catch (IOException e){
-//                Log.e(TAG, e.toString());
-//                e.printStackTrace();
-//                return false;
-            }
+            UserAccessResult result = NetCommunication.post(u, getString(R.string.server_host_url) + "/login", new UserAccessResult());
 
-            // (response == null) or network interrupted
-            return false;
+            if (result != null && result.getResult()) {
+                app.setCurrentUser(result.getUser());
+                return true;
+            } else return false;
         }
 
         /*
@@ -276,11 +239,12 @@ public class LoginActivity_Client extends AppCompatActivity {
             showProgress(false);
             if (success){
                 // 跳转到主界面
+                Toast.makeText(getApplicationContext(), getString(R.string.toast_hint_login_success), Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(LoginActivity_Client.this, MainActivity_Client.class);
                 startActivity(intent);
                 // finish();   //activity finish and terminate
             }else{
-                mPasswordView.setError(getString(R.string.error_incorrect_password));
+                mPasswordView.setError(getString(R.string.error_incorrect));
                 mPasswordView.requestFocus();
             }
         }
@@ -292,4 +256,3 @@ public class LoginActivity_Client extends AppCompatActivity {
         }
     }
 }
-
