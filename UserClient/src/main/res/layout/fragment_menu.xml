@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/top_layout_menu"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.main.MenuFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.seu.cose.seu_comp.layout.Base.TitleBar.TitleBar
+        android:id="@+id/titlebar_menu"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        app:title="@string/title_icon_menu"
+        app:backButton="false"
+        app:rightTitle="@string/title_topbar_right_refresh"/>
+
+    <ScrollView
+        android:id="@+id/scroll_menu"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

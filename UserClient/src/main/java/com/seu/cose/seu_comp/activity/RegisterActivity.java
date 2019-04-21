@@ -24,7 +24,7 @@ import com.seu.cose.seu_comp.entity.Login.UserAccessResult;
 /**
  * 注册窗口，输入新的帐号密码，确认后完成注册
  */
-public class RegisterActivity_client extends BaseAppCompatActivity {
+public class RegisterActivity extends BaseAppCompatActivity {
 
     /**
      * 功能标注ID

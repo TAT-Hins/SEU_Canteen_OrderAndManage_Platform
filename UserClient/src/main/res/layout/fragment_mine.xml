@@ -4,14 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     tools:context=".fragment.main.MineFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
-        android:id="@+id/scrollview_fragment_mine"
+        android:id="@+id/scroll_mine"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:theme="@style/ThemeOverlay.AppCompat.Light">
 
         <LinearLayout
             android:orientation="vertical"
@@ -19,44 +19,51 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:id="@+id/user_info_mine"
+                android:id="@+id/top_layout_mine"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="?android:attr/actionBarSize"
-                android:background="@color/colorPrimaryDark"
-                android:padding="10dp">
-
-                <ImageView
-                    android:id="@+id/head_mine"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:background="@color/color_text"
-                    android:src="@drawable/ic_blankhead" />
+                android:background="@color/colorPrimaryDark">
 
                 <LinearLayout
-                    android:id="@+id/name_id_mine"
+                    android:id="@+id/user_info_mine"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="horizontal"
+                    android:padding="10dp">
 
-                    <TextView
-                        android:id="@+id/nickname_mine"
+                    <ImageView
+                        android:id="@+id/head_mine"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@color/color_text"
+                        android:src="@drawable/ic_blankhead" />
+
+                    <LinearLayout
+                        android:id="@+id/name_id_mine"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-                        android:textSize="20sp"
-                        android:textColor="@color/color_text"
-                        android:text="用户名"/>
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/id_mine"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginLeft="10dp"
-                        android:text="账号" />
+                        <TextView
+                            android:id="@+id/nickname_mine"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:textSize="20sp"
+                            android:textColor="@color/color_text"
+                            android:text="用户名"/>
+
+                        <TextView
+                            android:id="@+id/id_mine"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="账号" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -67,6 +74,8 @@
                 android:layout_height="wrap_content"
                 android:background="@color/color_background_grey"
                 android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 android:weightSum="1">
 
                 <LinearLayout
@@ -471,113 +480,26 @@
 
                     </LinearLayout>
 
-                    <LinearLayout
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/quit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:background="@android:color/holo_red_dark"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/quitApp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/background_light"
-                        android:orientation="horizontal"
-                        android:padding="10dp">
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@drawable/ic_more" />
-
-                        <TextView
-                            android:layout_width="320dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="2dp"
-                            android:text="关于我们"
-                            android:textColor="@color/color_text" />
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@drawable/ic_next" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/background_light"
-                        android:orientation="horizontal"
-                        android:padding="10dp">
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@drawable/ic_more" />
-
-                        <TextView
-                            android:layout_width="320dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="2dp"
-                            android:text="关于我们"
-                            android:textColor="@color/color_text" />
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@drawable/ic_next" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/background_light"
-                        android:orientation="horizontal"
-                        android:padding="10dp">
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@drawable/ic_more" />
-
-                        <TextView
-                            android:layout_width="320dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="2dp"
-                            android:text="关于我们"
-                            android:textColor="@color/color_text" />
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@drawable/ic_next" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/background_light"
-                        android:orientation="horizontal"
-                        android:padding="10dp">
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@drawable/ic_more" />
-
-                        <TextView
-                            android:layout_width="320dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="2dp"
-                            android:text="关于我们"
-                            android:textColor="@color/color_text" />
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@drawable/ic_next" />
-
-                    </LinearLayout>
+                        android:padding="8dp"
+                        android:textSize="16dp"
+                        android:text="退出"
+                        android:gravity="center"
+                        android:textColor="@android:color/white" />
 
                 </LinearLayout>
 
@@ -588,11 +510,27 @@
     </ScrollView>
 
     <com.seu.cose.seu_comp.layout.Base.TitleBar.TitleBar
-        android:id="@+id/titlebar_fragment_mine"
+        android:id="@+id/titlebar_mine"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:barStyle="transparent"
         app:rightTitle="设置"
         app:leftIcon="@drawable/ic_blankhead" />
+
+    <!--<LinearLayout-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" >-->
+
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="?android:attr/actionBarSize" />-->
+
+        <!---->
+
+    <!--</LinearLayout>-->
 
 </RelativeLayout>

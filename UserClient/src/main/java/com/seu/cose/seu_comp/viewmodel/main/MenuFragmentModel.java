@@ -4,43 +4,38 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
-import com.seu.cose.seu_comp.Override.Base.COMP_Application;
 import com.seu.cose.seu_comp.Override.Base.NetCommunication;
 import com.seu.cose.seu_comp.R;
 import com.seu.cose.seu_comp.entity.Base.AccessResult;
-import com.seu.cose.seu_comp.entity.Base.Dish;
+import com.seu.cose.seu_comp.entity.Base.CanteenWindowInfo;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class DishesFragmentModel extends ViewModel {
+public class MenuFragmentModel extends ViewModel {
     // TODO: Implement the ViewModel
 
-    private ArrayList<MutableLiveData<List<Dish>>> dishes;
+    private MutableLiveData<Map<String, Map<String, ArrayList<CanteenWindowInfo>>>> windowMenu;
 
     /*
      * where = 橘园 / 梅园 / 桃园
      */
-    public LiveData<List<Dish>> getDishes(int where) {
-        if (where != COMP_Application.JUYUAN
-                && where != COMP_Application.MEIYUAN
-                && where != COMP_Application.TAOYUAN) {
-            // 不是餐厅之一
-            return null;
+    public LiveData<Map<String, Map<String, ArrayList<CanteenWindowInfo>>>> getWindowMenu() {
+        if (windowMenu == null){
+            windowMenu = new MutableLiveData<>();//初始化
+            obtainWindowMenu();     //获取窗口信息
         }
-        if (dishes == null){
-            dishes = new ArrayList<>(COMP_Application.CANTEEN_NUM);  //初始化
-            obtainMenu();     //获取推荐菜品信息
-        }
-        return dishes.get(where);
+        return windowMenu;
     }
 
-    private void obtainMenu() {
+    private void obtainWindowMenu() {
 
         boolean isSuccess = false;
 
@@ -57,9 +52,10 @@ public class DishesFragmentModel extends ViewModel {
             }
         };
 
-        List<Dish> dishes = NetCommunication.post_NewThread(null, R.string.server_host_url + "/getMenu", callback,
-                new AccessResult<List<Dish>>())
+        Map<String, Map<String, ArrayList<CanteenWindowInfo>>> menu = NetCommunication.post_NewThread(null, R.string.server_host_url + "/getWindows", callback,
+                new AccessResult<Map<String, Map<String, ArrayList<CanteenWindowInfo>>>>())
                 .getResponseBody();    //多线程方法
+        windowMenu.setValue(menu);
     }
 
 }

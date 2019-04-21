@@ -1,9 +1,10 @@
 <resources>
-    
+
     <string name="app_name">东南大学食堂点餐管理平台</string>
     <string name="login_activity_name">登录</string>
     <string name="register_activity_name">注册</string>
     <string name="main_activity_name">主页</string>
+    <string name="window_activity_name">食堂窗口</string>
 
     <!-- 网络请求根地址 -->
     <string name="server_host_url">http://10.0.2.2/UserClient</string>
@@ -46,20 +47,29 @@
 
     <!-- 主页面底部导航标题 -->
     <string name="title_icon_home">主页</string>
-    <string name="title_icon_dishes">菜单</string>
+    <string name="title_icon_menu">菜单</string>
+    <string name="title_icon_cart">购物车</string>
     <string name="title_icon_mine">我的</string>
 
     <!-- 提示框内容 -->
     <!-- 登录/注册界面 -->
     <string name="toast_hint_signup_success">注册成功！</string>
     <string name="toast_hint_login_success">登录成功！</string>
+
     <!-- 主界面 -->
     <string name="toast_hint_exit_success">退出成功！</string>
     <string name="toast_hint_exit_warning">再按一次退出</string>
+
+    <!-- 菜单页 -->
+    <string name="title_topbar_left_clear_menu">清空</string>
+    <string name="title_topbar_right_refresh">刷新</string>
 
     <!-- 个人信息页面 -->
     <string name="text_booking_record_week">近一周预约</string>
     <string name="text_booking_record_month">近一月预约</string>
     <string name="text_booking_record_year">近一年预约</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -7,9 +7,14 @@
         android:title="@string/title_icon_home" />
 
     <item
-        android:id="@+id/nav_dishes"
+        android:id="@+id/nav_menu"
         android:icon="@drawable/ic_menu"
-        android:title="@string/title_icon_dishes" />
+        android:title="@string/title_icon_menu" />
+
+    <item
+        android:id="@+id/nav_cart"
+        android:icon="@drawable/ic_cart"
+        android:title="@string/title_icon_cart" />
 
     <item
         android:id="@+id/nav_mine"

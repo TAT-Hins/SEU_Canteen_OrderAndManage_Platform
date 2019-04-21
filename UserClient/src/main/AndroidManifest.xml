@@ -18,18 +18,19 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".activity.LoginActivity_Client"
+            android:name=".activity.LoginActivity"
             android:label="@string/login_activity_name"
             android:theme="@style/AppTheme.Login">
+
         </activity>
 
         <activity
-            android:name=".activity.RegisterActivity_client"
+            android:name=".activity.RegisterActivity"
             android:label="@string/register_activity_name"
             android:theme="@style/AppTheme.Register" />
 
         <activity
-            android:name=".activity.MainActivity_Client"
+            android:name=".activity.MainActivity"
             android:label="@string/main_activity_name"
             android:theme="@style/AppTheme.Main">
             <intent-filter>
@@ -38,6 +39,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".activity.WindowActivity"
+            android:label="@string/window_activity_name" />
 
     </application>
 

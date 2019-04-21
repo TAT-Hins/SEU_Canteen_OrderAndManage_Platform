@@ -2,13 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
+    android:id="@+id/container_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.MainActivity_Client">
+    tools:context=".activity.MainActivity">
 
-    <!--<include layout="@layout/fragment_home" />-->
+    <View
+        android:id="@+id/fill_status_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/status_bar_height"
+        android:background="@color/colorAccent"/>
 
     <com.seu.cose.seu_comp.layout.main.MainViewPager
         android:id="@+id/viewpager_main"

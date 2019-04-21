@@ -3,12 +3,13 @@ package com.seu.cose.seu_comp.adapter.main;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.ViewGroup;
 
 import java.util.List;
 
-public class MainFragmentAdapter extends FragmentStatePagerAdapter {
+public class MainFragmentAdapter extends FragmentPagerAdapter {
 
     private List<Fragment> mFragments;
     private FragmentManager fragmentManager;

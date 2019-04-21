@@ -22,21 +22,20 @@ import android.widget.Toast;
 import com.seu.cose.seu_comp.Override.Base.BaseAppCompatActivity;
 import com.seu.cose.seu_comp.Override.Base.NetCommunication;
 import com.seu.cose.seu_comp.R;
-import com.seu.cose.seu_comp.entity.Base.AccessResult;
 import com.seu.cose.seu_comp.entity.Base.User;
 import com.seu.cose.seu_comp.entity.Login.UserAccessResult;
 
 /**
  * 登录窗口，输入在系统中已有的帐号密码，通过验证后进入系统
  */
-public class LoginActivity_Client extends BaseAppCompatActivity {
+public class LoginActivity extends BaseAppCompatActivity {
 
     /**
      * 功能标注ID
      */
 //    private static final int REQUEST_READ_CONTACTS = 0;     //联系人读取权限
 
-    private static final String TAG = "LoginActivity_Client";
+    private static final String TAG = "LoginActivity";
 
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
@@ -86,13 +85,13 @@ public class LoginActivity_Client extends BaseAppCompatActivity {
                 Intent intent;
 //                boolean isRegActivityExist = false;
 //                for (Activity act: app.activities){
-//                    if (act.getClass().equals(RegisterActivity_client.class)){
+//                    if (act.getClass().equals(RegisterActivity.class)){
 //                        intent
 //                        isRegActivityExist = true;
 //                    }
 //                }
 //                if (!isRegActivityExist)
-                    intent = new Intent(LoginActivity_Client.this, RegisterActivity_client.class);
+                    intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
             }
         });
@@ -240,7 +239,7 @@ public class LoginActivity_Client extends BaseAppCompatActivity {
             if (success){
                 // 跳转到主界面
                 Toast.makeText(getApplicationContext(), getString(R.string.toast_hint_login_success), Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(LoginActivity_Client.this, MainActivity_Client.class);
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 // finish();   //activity finish and terminate
             }else{
