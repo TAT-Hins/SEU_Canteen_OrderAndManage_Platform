@@ -7,7 +7,7 @@
     <string name="window_activity_name">食堂窗口</string>
 
     <!-- 网络请求根地址 -->
-    <string name="server_host_url">http://10.0.2.2/UserClient</string>
+    <string name="server_host_url">http://10.0.2.2:8080/SEU_COMP_WebServer/UserClient</string>
 
     <!-- 登录/注册界面 -->
     <string name="prompt_account">一卡通号/昵称</string>
@@ -51,6 +51,8 @@
     <string name="title_icon_cart">购物车</string>
     <string name="title_icon_mine">我的</string>
 
+    <string name="home_feature_btn_column_count">5</string>
+
     <!-- 提示框内容 -->
     <!-- 登录/注册界面 -->
     <string name="toast_hint_signup_success">注册成功！</string>
@@ -61,8 +63,11 @@
     <string name="toast_hint_exit_warning">再按一次退出</string>
 
     <!-- 菜单页 -->
-    <string name="title_topbar_left_clear_menu">清空</string>
-    <string name="title_topbar_right_refresh">刷新</string>
+    <string name="title_menu_topbar_left_clear">清空</string>
+    <string name="title_menu_topbar_right_refresh">刷新</string>
+
+    <!-- 购物车 -->
+    <string name="title_cart_topbar_right_edit">编辑</string>
 
     <!-- 个人信息页面 -->
     <string name="text_booking_record_week">近一周预约</string>

@@ -13,9 +13,9 @@
         android:id="@+id/titlebar_cart"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
-        app:title="@string/title_icon_menu"
+        app:title="@string/title_icon_cart"
         app:backButton="false"
-        app:rightTitle="@string/title_topbar_right_refresh"/>
+        app:rightTitle="@string/title_cart_topbar_right_edit"/>
 
     <ScrollView
         android:id="@+id/scroll_cart"
@@ -28,11 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/hello_blank_fragment" />
+            <!-- 添加购物车条目 -->
 
         </LinearLayout>
 

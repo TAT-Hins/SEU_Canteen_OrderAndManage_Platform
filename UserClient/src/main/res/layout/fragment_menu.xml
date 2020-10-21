@@ -15,7 +15,7 @@
         android:layout_height="?android:attr/actionBarSize"
         app:title="@string/title_icon_menu"
         app:backButton="false"
-        app:rightTitle="@string/title_topbar_right_refresh"/>
+        app:rightTitle="@string/title_menu_topbar_right_refresh"/>
 
     <ScrollView
         android:id="@+id/scroll_menu"
@@ -24,6 +24,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/scroll_layout_menu"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">

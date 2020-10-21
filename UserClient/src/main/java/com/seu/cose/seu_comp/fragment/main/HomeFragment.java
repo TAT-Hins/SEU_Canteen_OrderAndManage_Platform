@@ -66,7 +66,7 @@ public class HomeFragment extends BaseFragment_Main {
     @Override
     protected void initView() {
         super.initView();
-        // 设置头布局
+        // 设置头布 局
         mTopLayout = (AppBarLayout) getActivity().findViewById(R.id.top_layout_home);
 
         mTopLocationBar = (LinearLayout) getActivity().findViewById(R.id.topbar_home);

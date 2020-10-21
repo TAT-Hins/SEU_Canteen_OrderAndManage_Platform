@@ -4,6 +4,8 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.seu.cose.seu_comp.Override.Base.NetCommunication;
 import com.seu.cose.seu_comp.R;
 import com.seu.cose.seu_comp.entity.Base.AccessResult;
@@ -23,6 +25,8 @@ public class MenuFragmentModel extends ViewModel {
     // TODO: Implement the ViewModel
 
     private MutableLiveData<Map<String, Map<String, ArrayList<CanteenWindowInfo>>>> windowMenu;
+
+    private String json = "{";
 
     /*
      * where = 橘园 / 梅园 / 桃园
@@ -52,9 +56,10 @@ public class MenuFragmentModel extends ViewModel {
             }
         };
 
-        Map<String, Map<String, ArrayList<CanteenWindowInfo>>> menu = NetCommunication.post_NewThread(null, R.string.server_host_url + "/getWindows", callback,
-                new AccessResult<Map<String, Map<String, ArrayList<CanteenWindowInfo>>>>())
-                .getResponseBody();    //多线程方法
+//        Map<String, Map<String, ArrayList<CanteenWindowInfo>>> menu = NetCommunication.post_NewThread(null, R.string.server_host_url + "/getWindows", callback,
+//                new AccessResult<Map<String, Map<String, ArrayList<CanteenWindowInfo>>>>())
+//                .getResponseBody();    //多线程方法
+        Map<String, Map<String, ArrayList<CanteenWindowInfo>>> menu = JSONObject.toJavaObject(JSON.parseObject(json), Map.class);
         windowMenu.setValue(menu);
     }
 

@@ -31,4 +31,10 @@
         <attr name="lineSize" format="dimension" />
     </declare-styleable>
 
+    <declare-styleable name="MenuWindowIconView">
+        <attr name="windowIcon" format="reference|integer" />
+        <attr name="name" format="string" />
+        <attr name="name_textColor" format="color" />
+    </declare-styleable>
+
 </resources>

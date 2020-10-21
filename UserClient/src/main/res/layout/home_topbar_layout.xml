@@ -2,40 +2,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/home_topbar_layout"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/bar_pressed_black5">
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/hello_fragment_home"
-            android:textSize="15sp"
-            android:drawableStart="@drawable/ic_location"
-            android:drawableEnd="@drawable/ic_next"/>
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="end"
-            android:src="@drawable/ic_alert" />
-
-    </LinearLayout>
+        android:layout_weight="1"
+        android:layout_height="match_parent"/>
 
     <android.support.v7.widget.SearchView
+        android:id="@+id/search_home"
         android:layout_width="match_parent"
         android:layout_height="30dp"
+        android:layout_weight="1"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/home_searchview_background"
         app:closeIcon="@drawable/ic_close" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

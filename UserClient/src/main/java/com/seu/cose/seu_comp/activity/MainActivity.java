@@ -40,7 +40,7 @@ public class MainActivity extends BaseAppCompatActivity
 
     private MainFragmentAdapter fragAdapter;
 
-    private boolean mIsExit;    //预退出状态标识
+    private boolean mIsExit = false;    //预退出状态标识
 
     private static final BaseFragment_Main[] FRAGMENTS_CLASS = {
             HomeFragment.newInstance(),
@@ -69,8 +69,6 @@ public class MainActivity extends BaseAppCompatActivity
         for (Fragment f : FRAGMENTS_CLASS){
             frags_main.add(f);
         }
-
-
 
         // 设置fragment适配器
         fragAdapter = new MainFragmentAdapter(getSupportFragmentManager(), frags_main);

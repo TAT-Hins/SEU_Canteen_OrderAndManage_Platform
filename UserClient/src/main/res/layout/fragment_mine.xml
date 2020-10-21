@@ -514,23 +514,10 @@
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:fitsSystemWindows="true"
+        android:visibility="invisible"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:barStyle="transparent"
         app:rightTitle="设置"
         app:leftIcon="@drawable/ic_blankhead" />
-
-    <!--<LinearLayout-->
-        <!--android:orientation="vertical"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" >-->
-
-        <!--<View-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="?android:attr/actionBarSize" />-->
-
-        <!---->
-
-    <!--</LinearLayout>-->
 
 </RelativeLayout>

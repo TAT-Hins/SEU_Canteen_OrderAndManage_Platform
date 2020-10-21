@@ -55,7 +55,8 @@ public class NetCommunication {
 
             if (response.isSuccessful()){
                 // success
-                ret = (T) JSON.parseObject(response.body().string(), ret.getClass());
+                String json = response.body().string();
+                ret = (T) JSON.parseObject(json, ret.getClass());
                 response.body().close();
             }
             else {
@@ -73,7 +74,8 @@ public class NetCommunication {
 
     @SuppressWarnings("unchecked")
     @Nullable
-    public static <T extends AccessResult<? extends Object>> T post_NewThread(Object params, String url, Callback callback, T ret){
+    public static <T extends AccessResult<? extends Object>> T post_NewThread
+            (Object params, String url, Callback callback, T ret) {
         //TODO: 使用OkHttp框架进行网络通信
 
         //创建OkHttpClient对象

@@ -11,8 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.seu.cose.seu_comp.Override.Base.BaseFragment;
-import com.seu.cose.seu_comp.Override.Base.COMP_Application;
-import com.seu.cose.seu_comp.R;
 import com.seu.cose.seu_comp.activity.MainActivity;
 
 public abstract class BaseFragment_Main extends BaseFragment {
@@ -20,7 +18,6 @@ public abstract class BaseFragment_Main extends BaseFragment {
     protected MainActivity mActivity;
 
     protected ViewGroup mTopLayout;
-    protected View mStatusBarView;
 
     @Nullable
     @Override
@@ -33,7 +30,6 @@ public abstract class BaseFragment_Main extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView();
-
     }
 
     @Override

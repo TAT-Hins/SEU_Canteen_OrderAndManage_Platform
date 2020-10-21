@@ -16,34 +16,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".activity.LoginActivity"
             android:label="@string/login_activity_name"
             android:theme="@style/AppTheme.Login">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
         <activity
             android:name=".activity.RegisterActivity"
             android:label="@string/register_activity_name"
             android:theme="@style/AppTheme.Register" />
-
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/main_activity_name"
             android:theme="@style/AppTheme.Main">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
         <activity
             android:name=".activity.WindowActivity"
             android:label="@string/window_activity_name" />
-
+        <activity android:name=".activity.SettingsActivity"></activity>
     </application>
 
 </manifest>
